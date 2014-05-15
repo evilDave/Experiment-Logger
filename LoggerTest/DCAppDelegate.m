@@ -12,6 +12,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[Antenna sharedLogger] addChannelWithURL:[NSURL URLWithString:@"http://api.logentries.com/ba4fb57b-339c-454d-922d-93f26fb8b44c/hosts/ManualHost/test/?realtime=1"] method:@"PUT"];
+    [[Antenna sharedLogger] startLoggingApplicationLifecycleNotifications];
+    
+    [[Antenna sharedLogger] log:@"Hello, world."];
+    
     // Override point for customization after application launch.
     return YES;
 }
